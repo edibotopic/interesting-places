@@ -1,8 +1,8 @@
 import { aboutController } from "./controllers/about-controller.js";
 import { accountsController } from "./controllers/accounts-controller.js";
 import { dashboardController } from "./controllers/dashboard-controller.js";
-import { playlistController } from "./controllers/playlist-controller.js";
-import { trackController } from "./controllers/track-controller.js";
+import { placegroupController as placeGroupController } from "./controllers/placegroup-controller.js";
+import { placeController } from "./controllers/place-controller.js";
 
 export const webRoutes = [
   { method: "GET", path: "/", config: accountsController.index },
@@ -15,13 +15,13 @@ export const webRoutes = [
   { method: "GET", path: "/about", config: aboutController.index },
 
   { method: "GET", path: "/dashboard", config: dashboardController.index },
-  { method: "POST", path: "/dashboard/addplaylist", config: dashboardController.addPlaylist },
-  { method: "GET", path: "/dashboard/deleteplaylist/{id}", config: dashboardController.deletePlaylist },
+  { method: "POST", path: "/dashboard/addplacegroup", config: dashboardController.addPlacegroup },
+  { method: "GET", path: "/dashboard/deleteplacegroup/{id}", config: dashboardController.deletePlacegroup },
 
-  { method: "GET", path: "/playlist/{id}", config: playlistController.index },
-  { method: "POST", path: "/playlist/{id}/addtrack", config: playlistController.addTrack },
-  { method: "GET", path: "/playlist/{id}/deletetrack/{trackid}", config: playlistController.deleteTrack },
+  { method: "GET", path: "/placegroup/{id}", config: placeGroupController.index },
+  { method: "POST", path: "/placegroup/{id}/addplace", config: placeGroupController.addPlace },
+  { method: "GET", path: "/placegroup/{id}/deleteplace/{placeid}", config: placeGroupController.deletePlace },
 
-  { method: "GET", path: "/track/{id}/edittrack/{trackid}", config: trackController.index },
-  { method: "POST", path: "/track/{id}/updatetrack/{trackid}", config: trackController.update },
+  { method: "GET", path: "/place/{id}/editplace/{placeid}", config: placeController.index },
+  { method: "POST", path: "/place/{id}/updateplace/{placeid}", config: placeController.update },
 ];

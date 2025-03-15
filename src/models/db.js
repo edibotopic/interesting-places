@@ -1,36 +1,36 @@
 import { userMemStore } from "./mem/user-mem-store.js";
-import { playlistMemStore } from "./mem/playlist-mem-store.js";
-import { trackMemStore } from "./mem/track-mem-store.js";
+import { placegroupMemStore } from "./mem/placegroup-mem-store.js";
+import { placeMemStore } from "./mem/place-mem-store.js";
 import { userJsonStore } from "./json/user-json-store.js";
-import { playlistJsonStore } from "./json/playlist-json-store.js";
-import { trackJsonStore } from "./json/track-json-store.js";
+import { placegroupJsonStore } from "./json/placegroup-json-store.js";
+import { placeJsonStore } from "./json/place-json-store.js";
 import { userMongoStore } from "./mongo/user-mongo-store.js";
-import { playlistMongoStore } from "./mongo/playlist-mongo-store.js";
-import { trackMongoStore } from "./mongo/track-mongo-store.js";
+import { placegroupMongoStore } from "./mongo/placegroup-mongo-store.js";
+import { placeMongoStore } from "./mongo/place-mongo-store.js";
 import { connectMongo } from "./mongo/connect.js";
 
 export const db = {
   userStore: null,
-  playlistStore: null,
-  trackStore: null,
+  placegroupStore: null,
+  placeStore: null,
 
   init(storeType) {
     switch (storeType) {
-      case "json" :
+      case "json":
         this.userStore = userJsonStore;
-        this.playlistStore = playlistJsonStore;
-        this.trackStore = trackJsonStore;
+        this.placegroupStore = placegroupJsonStore;
+        this.placeStore = placeJsonStore;
         break;
-      case "mongo" :
+      case "mongo":
         this.userStore = userMongoStore;
-        this.playlistStore = playlistMongoStore;
-        this.trackStore = trackMongoStore;
+        this.placegroupStore = placegroupMongoStore;
+        this.placeStore = placeMongoStore;
         connectMongo();
         break;
-      default :
+      default:
         this.userStore = userMemStore;
-        this.playlistStore = playlistMemStore;
-        this.trackStore = trackMemStore;
+        this.placegroupStore = placegroupMemStore;
+        this.placeStore = placeMemStore;
     }
   }
 };

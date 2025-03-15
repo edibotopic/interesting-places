@@ -1,11 +1,11 @@
 import Boom from "@hapi/boom";
 import { db } from "../models/db.js";
-import { TrackSpec, PlaylistSpec } from "../models/joi-schemas.js";
+import { PlaceSpec, PlacegroupSpec } from "../models/joi-schemas.js";
 
-export const trackApi = {
+export const placeApi = {
   find: {
     auth: false,
-    handler: async function (request, h) {
+    handler: async function(request, h) {
     },
   },
 
@@ -17,19 +17,19 @@ export const trackApi = {
 
   create: {
     auth: false,
-    handler: async function (request, h) {
+    handler: async function(request, h) {
     },
   },
 
   deleteAll: {
     auth: false,
-    handler: async function (request, h) {
+    handler: async function(request, h) {
     },
   },
 
   deleteOne: {
     auth: false,
-    handler: async function (request, h) {
+    handler: async function(request, h) {
     },
   },
 };

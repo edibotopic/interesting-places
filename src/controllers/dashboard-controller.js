@@ -1,43 +1,43 @@
-import { PlaylistSpec } from "../models/joi-schemas.js";
+import { PlacegroupSpec } from "../models/joi-schemas.js";
 import { db } from "../models/db.js";
 
 export const dashboardController = {
   index: {
-    handler: async function (request, h) {
+    handler: async function(request, h) {
       const loggedInUser = request.auth.credentials;
-      const playlists = await db.playlistStore.getUserPlaylists(loggedInUser._id);
+      const placegroups = await db.placegroupStore.getUserPlacegroups(loggedInUser._id);
       const viewData = {
-        title: "Playtime Dashboard",
+        name: "Placegroup Dashboard",
         user: loggedInUser,
-        playlists: playlists,
+        placegroups: placegroups,
       };
       return h.view("dashboard-view", viewData);
     },
   },
 
-  addPlaylist: {
+  addPlacegroup: {
     validate: {
-      payload: PlaylistSpec,
+      payload: PlacegroupSpec,
       options: { abortEarly: false },
-      failAction: function (request, h, error) {
-        return h.view("dashboard-view", { title: "Add Playlist error", errors: error.details }).takeover().code(400);
+      failAction: function(request, h, error) {
+        return h.view("dashboard-view", { name: "Add Placegroup error", errors: error.details }).takeover().code(400);
       },
     },
-    handler: async function (request, h) {
+    handler: async function(request, h) {
       const loggedInUser = request.auth.credentials;
-      const newPlayList = {
+      const newPlacegroup = {
         userid: loggedInUser._id,
-        title: request.payload.title,
+        name: request.payload.name,
       };
-      await db.playlistStore.addPlaylist(newPlayList);
+      await db.placegroupStore.addPlacegroup(newPlacegroup);
       return h.redirect("/dashboard");
     },
   },
 
-  deletePlaylist: {
-    handler: async function (request, h) {
-      const playlist = await db.playlistStore.getPlaylistById(request.params.id);
-      await db.playlistStore.deletePlaylistById(playlist._id);
+  deletePlacegroup: {
+    handler: async function(request, h) {
+      const placegroup = await db.placegroupStore.getPlacegroupById(request.params.id);
+      await db.placegroupStore.deletePlacegroupById(placegroup._id);
       return h.redirect("/dashboard");
     },
   },
