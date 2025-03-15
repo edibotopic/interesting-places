@@ -4,14 +4,14 @@ import { db } from "../models/db.js";
 export const accountsController = {
   index: {
     auth: false,
-    handler: function (request, h) {
-      return h.view("main", { title: "Welcome to Playlist" });
+    handler: function(request, h) {
+      return h.view("main", { title: "Welcome to Placetime" });
     },
   },
   showSignup: {
     auth: false,
-    handler: function (request, h) {
-      return h.view("signup-view", { title: "Sign up for Playlist" });
+    handler: function(request, h) {
+      return h.view("signup-view", { title: "Sign up for Placetime" });
     },
   },
   signup: {
@@ -19,11 +19,11 @@ export const accountsController = {
     validate: {
       payload: UserSpec,
       options: { abortEarly: false },
-      failAction: function (request, h, error) {
+      failAction: function(request, h, error) {
         return h.view("signup-view", { title: "Sign up error", errors: error.details }).takeover().code(400);
       },
     },
-    handler: async function (request, h) {
+    handler: async function(request, h) {
       const user = request.payload;
       await db.userStore.addUser(user);
       return h.redirect("/");
@@ -31,8 +31,8 @@ export const accountsController = {
   },
   showLogin: {
     auth: false,
-    handler: function (request, h) {
-      return h.view("login-view", { title: "Login to Playlist" });
+    handler: function(request, h) {
+      return h.view("login-view", { title: "Login to Placetime" });
     },
   },
   login: {
@@ -40,11 +40,11 @@ export const accountsController = {
     validate: {
       payload: UserCredentialsSpec,
       options: { abortEarly: false },
-      failAction: function (request, h, error) {
+      failAction: function(request, h, error) {
         return h.view("login-view", { title: "Log in error", errors: error.details }).takeover().code(400);
       },
     },
-    handler: async function (request, h) {
+    handler: async function(request, h) {
       const { email, password } = request.payload;
       const user = await db.userStore.getUserByEmail(email);
       if (!user || user.password !== password) {
@@ -55,7 +55,7 @@ export const accountsController = {
     },
   },
   logout: {
-    handler: function (request, h) {
+    handler: function(request, h) {
       request.cookieAuth.clear();
       return h.redirect("/");
     },

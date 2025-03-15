@@ -1,8 +1,8 @@
 export const aboutController = {
   index: {
-    handler: function (request, h) {
+    handler: function(request, h) {
       const viewData = {
-        title: "About Playtime",
+        title: "About Placetime",
       };
       return h.view("about-view", viewData);
     },
