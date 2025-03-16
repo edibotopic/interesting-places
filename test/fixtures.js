@@ -28,47 +28,47 @@ export const testUsers = [
   }
 ];
 
-export const mozart = {
-  title: "Mozart Favourites"
+export const summerTrip = {
+  title: "Summer Trip"
 };
 
-export const concerto = {
-  "title": "Violin Concerto No. 3",
-  "artist": "Mozart",
-  "duration": 15
+export const beachKerry = {
+  "name": "Beach",
+  "location": "Kerry",
+  "rating": 5
 };
 
 
-export const beethoven = {
-  title: "Mozart Favourites"
+export const winterTrip = {
+  title: "Winter Trip"
 };
 
-export const testPlaylists = [
+export const testPlacegroups = [
   {
-    title: "Beethoven Sonatas"
+    title: "Summer trip 2023"
   },
   {
-    title: "Beethoven Concertos"
+    title: "Big hike 2022"
   },
   {
-    title: "Beethoven Symphonies"
+    title: "Hague conference 2025"
   }
 ];
 
-export const testTracks = [
+export const testPlaces = [
   {
-    "title": "Piano Sonata No. 3",
-    "artist": "Beethoven",
-    "duration": 5
+    "name": "Strange alley",
+    "location": "Hague",
+    "rating": 2
   },
   {
-    "title": "Piano Sonata No. 7",
-    "artist": "Beethoven",
-    "duration": 6
+    "name": "Strange Mall",
+    "location": "Madison",
+    "rating": 4
   },
   {
-    "title": "Piano Sonata No. 10",
-    "artist": "Beethoven",
-    "duration": 4
+    "name": "Strange roller rink",
+    "location": "Hamburg",
+    "rating": 5
   }
 ];

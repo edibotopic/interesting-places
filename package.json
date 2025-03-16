@@ -1,6 +1,6 @@
 {
   "name": "Interesting Places",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A POI application for the HDip in Computing, WIT",
   "main": "src/server.js",
   "type": "module",
