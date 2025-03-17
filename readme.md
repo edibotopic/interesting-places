@@ -13,3 +13,15 @@ Here are some essentials:
 * User stores groups in account
 * The data is accessible via an API
 * The API is documented
+
+## Todo
+
+- [ ] Minimal extension to model (e.g., name, category, description, analytics, lat, lng)
+- [ ] Add enhancements (e.g., user images, admin user)
+- [ ] API docs
+- [ ] Deploy
+- [ ] Refresh readme
+
+## Questions
+
+* How could the user model need to be adapted for the new concept?

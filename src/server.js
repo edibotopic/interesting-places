@@ -3,6 +3,8 @@ import Hapi from "@hapi/hapi";
 import Cookie from "@hapi/cookie";
 import dotenv from "dotenv";
 import path from "path";
+import HapiSwagger from "hapi-swagger";
+import Inert from "@hapi/inert";
 import Joi from "joi";
 import { fileURLToPath } from "url";
 import Handlebars from "handlebars";
@@ -20,13 +22,28 @@ if (result.error) {
   process.exit(1);
 }
 
+const swaggerOptions = {
+  info: {
+    title: "Placetime API",
+    version: "0.1"
+  },
+};
+
 async function init() {
   const server = Hapi.server({
     port: process.env.PORT || 3000,
   });
 
-  await server.register(Vision);
-  await server.register(Cookie);
+  await server.register([
+    Cookie,
+    Inert,
+    Vision,
+    {
+      plugin: HapiSwagger,
+      options: swaggerOptions,
+    },
+  ]);
+
   server.validator(Joi);
 
   server.views({
