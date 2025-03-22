@@ -16,12 +16,17 @@ Here are some essentials:
 
 ## Todo
 
-- [ ] Minimal extension to model (e.g., name, category, description, analytics, lat, lng)
-- [ ] Add enhancements (e.g., user images, admin user)
-- [ ] API docs
-- [ ] Deploy
-- [ ] Refresh readme
+* [x] Minimal extension to model (e.g., name, description, lat, long, rating)
+* [~] Add enhancements (e.g., user images, admin user)
+* [~] API docs
+* [ ] Deploy
+* [ ] Structure and complete README
 
-## Questions
+### Standing item
 
-* How could the user model need to be adapted for the new concept?
+* [ ] Update tests
+
+## Bugs
+
+* Invalid place details send user to faulty input screen (404 on input)
+* Empty string for lat, long and rating returns 0 (not ideal)

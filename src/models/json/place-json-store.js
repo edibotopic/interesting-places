@@ -44,8 +44,12 @@ export const placeJsonStore = {
 
   async updatePlace(place, updatedPlace) {
     place.name = updatedPlace.name;
-    place.artist = updatedPlace.location;
-    place.duration = updatedPlace.rating;
+    place.location = updatedPlace.location;
+    place.description = updatedPlace.description;
+    place.long = updatedPlace.long;
+    place.lat = updatedPlace.lat;
+    place.rating = updatedPlace.rating;
+    place.img = updatedPlace.img;
     await db.write();
   },
 };
