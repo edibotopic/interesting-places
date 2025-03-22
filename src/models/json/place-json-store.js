@@ -49,6 +49,7 @@ export const placeJsonStore = {
     place.long = updatedPlace.long;
     place.lat = updatedPlace.lat;
     place.rating = updatedPlace.rating;
+    place.img = updatedPlace.img;
     await db.write();
   },
 };

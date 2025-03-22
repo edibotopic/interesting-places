@@ -32,6 +32,7 @@ export const placeController = {
         long: Number(request.payload.long),
         lat: Number(request.payload.lat),
         rating: Number(request.payload.rating),
+        img: request.payload.img,
       };
       await db.placeStore.updatePlace(place, newPlace);
       return h.redirect(`/placegroup/${request.params.id}`);

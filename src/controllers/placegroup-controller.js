@@ -27,6 +27,7 @@ export const placegroupController = {
         name: request.payload.name,
         location: request.payload.location,
         rating: Number(request.payload.rating),
+        img: request.payload.img,
       };
       await db.placeStore.addPlace(placegroup._id, newPlace);
       return h.redirect(`/placegroup/${placegroup._id}`);

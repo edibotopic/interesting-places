@@ -7,6 +7,7 @@
       <th>Longitude</th>
       <th>Latitude</th>
       <th>Rating</th>
+      <th>Image</th>
       <th></th>
     </tr>
   </thead>
@@ -30,6 +31,9 @@
         </td>
         <td>
           {{rating}}
+        </td>
+        <td>
+          {{> thumbnail}}
         </td>
         <td>
           <a href="/placegroup/{{../placegroup._id}}/deleteplace/{{_id}}" class="ui icon button">

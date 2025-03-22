@@ -50,5 +50,6 @@ export const placeMemStore = {
     place.long = updatedPlace.long;
     place.lat = updatedPlace.lat;
     place.rating = updatedPlace.rating;
+    place.img = updatedPlace.img;
   },
 };

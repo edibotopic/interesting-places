@@ -9,6 +9,7 @@ const placeSchema = new Schema({
   long: Number,
   lat: Number,
   rating: Number,
+  img: String,
   placegroupid: {
     type: Schema.Types.ObjectId,
     ref: "Placegroup",

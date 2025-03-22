@@ -28,6 +28,7 @@ export const PlaceSpec = {
   lat: Joi.number().allow("").optional(),
   long: Joi.number().allow("").optional(),
   rating: Joi.number().allow("").optional(),
+  img: Joi.string().allow("").optional(),
 };
 
 // TODO: include example data
