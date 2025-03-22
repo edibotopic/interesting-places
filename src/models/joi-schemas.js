@@ -21,13 +21,15 @@ export const UserSpec = Joi.object()
 export const UserArray = Joi.array().items(UserSpec).label("UserArray");
 
 // TODO: include example data
+// BUG: the empty string for number types returns 0
+// BUG: if input is invalid, user is taken to a non-functional input screen
 export const PlaceSpec = {
   name: Joi.string().required(),
   location: Joi.string().required(),
-  description: Joi.string().optional(),
-  lat: Joi.number().allow("").optional(),
-  long: Joi.number().allow("").optional(),
-  rating: Joi.number().allow("").optional(),
+  description: Joi.string().allow("").optional(),
+  lat: Joi.number().allow(null, "").optional().min(-90).max(90),
+  long: Joi.number().allow(null, "").optional().min(-180).max(180),
+  rating: Joi.number().allow(null, "").optional().min(0).max(5),
   img: Joi.string().allow("").optional(),
 };
 
