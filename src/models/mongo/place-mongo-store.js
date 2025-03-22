@@ -43,6 +43,9 @@ export const placeMongoStore = {
     const placeDoc = await Place.findOne({ _id: place._id });
     placeDoc.name = updatedPlace.name;
     placeDoc.location = updatedPlace.location;
+    placeDoc.description = updatedPlace.description;
+    placeDoc.long = updatedPlace.long;
+    placeDoc.lat = updatedPlace.lat;
     placeDoc.rating = updatedPlace.rating;
     await placeDoc.save();
   },

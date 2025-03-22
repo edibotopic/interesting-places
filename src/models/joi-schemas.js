@@ -24,6 +24,9 @@ export const UserArray = Joi.array().items(UserSpec).label("UserArray");
 export const PlaceSpec = {
   name: Joi.string().required(),
   location: Joi.string().required(),
+  description: Joi.string().optional(),
+  lat: Joi.number().allow("").optional(),
+  long: Joi.number().allow("").optional(),
   rating: Joi.number().allow("").optional(),
 };
 

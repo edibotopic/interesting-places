@@ -35,7 +35,10 @@ export const summerTrip = {
 export const beachKerry = {
   "name": "Beach",
   "location": "Kerry",
-  "rating": 5
+  "description": "A beach in Kerry",
+  "long": -9,
+  "lat": 52,
+  "rating": 4
 };
 
 
@@ -59,16 +62,25 @@ export const testPlaces = [
   {
     "name": "Strange alley",
     "location": "Hague",
-    "rating": 2
+    "description": "A strange alley in The Hague",
+    "long": 4,
+    "lat": 52,
+    "rating": 1
   },
   {
     "name": "Strange Mall",
     "location": "Madison",
+    "description": "A strange mall in Madison, WI",
+    "long": 89,
+    "lat": 43,
     "rating": 4
   },
   {
     "name": "Strange roller rink",
     "location": "Hamburg",
+    "description": "A strange roller rink in Hamburg",
+    "long": 10,
+    "lat": 54,
     "rating": 5
   }
 ];

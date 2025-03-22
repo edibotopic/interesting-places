@@ -5,6 +5,9 @@ const { Schema } = Mongoose;
 const placeSchema = new Schema({
   name: String,
   location: String,
+  description: String,
+  long: Number,
+  lat: Number,
   rating: Number,
   placegroupid: {
     type: Schema.Types.ObjectId,
