@@ -1,8 +1,14 @@
 # Interesting Places
 
-A basic CRUD application for points-of-interest.
+A basic CRUD application for points-of-interest,
+allowing **experiences** to be recorded using
+groups of **interesting places**:
 
-![example screenshot](./assets/screenshot.png)
+![example screenshot from local dev](./assets/screenshot.png)
+
+Deployed on render
+
+![example screenshot on render](./assets/screenshot_render.png)
 
 ## The basic idea
 
