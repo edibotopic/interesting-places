@@ -1,7 +1,7 @@
 import { assert } from "chai";
 import { assertSubset } from "../test-utils.js";
 import { placetimeService } from "./placetime-service.js";
-import { maggie, summerTrip, testPlacegroups, testPlaces, beachKerry } from "../fixtures.js";
+import { john, summerTrip, testPlacegroups, testPlaces, beachKerry } from "../fixtures.js";
 
 suite("Place API tests", () => {
   let user = null;
