@@ -19,8 +19,8 @@ Here are some essentials:
 ## Todo
 
 * [x] Minimal extension to model (e.g., name, description, lat, long, rating)
-* [~] Add enhancements (e.g., user images, admin user)
-* [~] API docs
+* [x] Add enhancements (e.g., user images, admin user)
+* [x] API docs
 * [ ] Deploy
 * [ ] Structure and complete README
 
