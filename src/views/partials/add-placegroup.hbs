@@ -1,7 +1,16 @@
 <form action="/dashboard/addplacegroup" method="POST">
+    <h1 class="title">Experience</h1>
   <div class="field">
-    <label class="label">Place group</label>
-    <input class="input" type="text" placeholder="Enter place group" name="name" />
+      <label class="label">Name</label>
+    <input class="input" type="text" placeholder="Enter a new experience (e.g., company sprint in Hamburg)" name="name" />
   </div>
-  <button class="button is-link">Add a place group</button>
+  <div class="field">
+      <label class="label">Date</label>
+    <input class="input" type="text" placeholder="Enter the reporting date (format: MM-YYYY)" name="date" />
+  </div>
+  <div class="field">
+      <label class="label">Summary</label>
+    <input class="input" type="text" placeholder="Enter a summary (e.g., hiking and museums)" name="summary" />
+  </div>
+  <button class="button is-link">Add experience</button>
 </form>

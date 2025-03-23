@@ -20,20 +20,36 @@ export const UserSpec = Joi.object()
 
 export const UserArray = Joi.array().items(UserSpec).label("UserArray");
 
-// TODO: include example data
 // BUG: the empty string for number types returns 0
 // BUG: if input is invalid, user is taken to a non-functional input screen
-export const PlaceSpec = {
-  name: Joi.string().required(),
-  location: Joi.string().required(),
-  description: Joi.string().allow("").optional(),
-  lat: Joi.number().allow(null, "").optional().min(-90).max(90),
-  long: Joi.number().allow(null, "").optional().min(-180).max(180),
-  rating: Joi.number().allow(null, "").optional().min(0).max(5),
-  img: Joi.string().allow("").optional(),
-};
+export const PlaceSpec = Joi.object()
+  .keys({
+    name: Joi.string().example("Odd lighthouse").required(),
+    location: Joi.string().example("Parts unknown").required(),
+    description: Joi.string().allow("I found this at a beach").optional(),
+    lat: Joi.number().example("30").allow(null, "").optional().min(-90).max(90),
+    long: Joi.number().example("60").allow(null, "").optional().min(-180).max(180),
+    rating: Joi.number().example("5").allow(null, "").optional().min(0).max(5),
+    img: Joi.string().example("").allow("").optional(),
+    _id: IdSpec,
+    __v: Joi.number(),
+  })
+  .label("PlaceDetails")
 
-// TODO: include example data
-export const PlacegroupSpec = {
-  name: Joi.string().required(),
-};
+export const PlaceArray = Joi.array().items(PlaceSpec).label("PlaceArray");
+
+export const PlacegroupSpec = Joi.object()
+  .keys({
+    name: Joi.string().example("Summer Holiday").required(),
+    date: Joi.string()
+      .pattern(/^(0[1-9]|1[0-2])-\d{4}$/) // Enforce MM-YYYY format
+      .example("06-2025")
+      .optional()
+      .allow(""),
+    summary: Joi.string().example("Spanish holiday 2025").allow("").optional(),
+    _id: IdSpec,
+    __v: Joi.number(),
+  })
+  .label("PlacegroupDetails")
+
+export const PlaceGroupArray = Joi.array().items(PlacegroupSpec).label("PlaceGroupArray");

@@ -28,6 +28,8 @@ export const dashboardController = {
       const newPlacegroup = {
         userid: loggedInUser._id,
         name: request.payload.name,
+        date: request.payload.date,
+        summary: request.payload.summary,
       };
       await db.placegroupStore.addPlacegroup(newPlacegroup);
       return h.redirect("/dashboard");
