@@ -6,9 +6,13 @@ groups of **interesting places**:
 
 ![example screenshot from local dev](./assets/screenshot.png)
 
-Deployed on render
+This is how the deployment looks on Render:
 
 ![example screenshot on render](./assets/screenshot_render.png)
+
+This is an example of the Swagger-based, interactive API documentation:
+
+![example of Swagger docs](./assets/screenshot_api.png)
 
 ## The basic idea
 
