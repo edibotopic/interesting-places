@@ -27,12 +27,13 @@ Here are some essentials:
 * [x] Minimal extension to model (e.g., name, description, lat, long, rating)
 * [x] Add enhancements (e.g., user images, admin user)
 * [x] API docs
-* [ ] Deploy
+* [x] Deploy
 * [ ] Structure and complete README
+* [ ] Complete rubric
 
 ### Standing item
 
-* [ ] Update tests
+* [ ] Check and update tests
 
 ## Bugs
 
