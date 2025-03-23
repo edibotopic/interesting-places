@@ -24,9 +24,15 @@ if (result.error) {
 
 const swaggerOptions = {
   info: {
-    title: "Placetime API",
-    version: "0.1"
+    title: "InterestingPlaces API",
+    version: "0.2"
   },
+  grouping: "tags", // Group routes by tags
+  tags: [
+    { name: "user", description: "User-related endpoints" },
+    { name: "place", description: "Place-related endpoints" },
+    { name: "placegroup", description: "Placegroup-related endpoints" },
+  ],
 };
 
 async function init() {
