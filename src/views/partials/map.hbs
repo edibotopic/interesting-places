@@ -1,0 +1,21 @@
+<script src="/leaflet/leaflet.js"></script>
+
+<div id="{{name}}_map" style="height: 150px; width: 150px;"></div>
+<script>
+
+    // Give map a unique root name
+    var mapName = "{{name}}";
+
+    // Define data so they can be passed to script
+    var lat = {{lat}}; 
+    var long = {{long}};
+    
+    // Initialie map with dynamic mapName
+    var map = L.map(mapName + "_map").setView([lat, long], 13);
+
+    // Add map tiles
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+    // BUG: Add a marker (doesn't work)
+    <!-- L.marker([lat, long]).addTo(map); -->
+</script>
