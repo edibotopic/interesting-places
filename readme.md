@@ -2,6 +2,8 @@
 
 A basic CRUD application for points-of-interest.
 
+![example screenshot](./assets/screenshot.png)
+
 ## The basic idea
 
 There is a lot that can be done, but time is short!
