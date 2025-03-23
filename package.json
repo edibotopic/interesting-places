@@ -30,6 +30,7 @@
     "hapi-swagger": "^17.3.2",
     "joi": "^17.13.3",
     "leaflet": "^1.9.4",
+    "leaflet-fullscreen": "^1.0.2",
     "lowdb": "^7.0.1",
     "mongoose": "^8.10.0",
     "uuid": "^11.0.5"
