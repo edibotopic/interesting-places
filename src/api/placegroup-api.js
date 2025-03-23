@@ -1,6 +1,7 @@
 import Boom from "@hapi/boom";
-import { PlacegroupSpec } from "../models/joi-schemas.js";
 import { db } from "../models/db.js";
+import { PlacegroupSpec, PlaceGroupArray } from "../models/joi-schemas.js"
+import { validationError } from "../utils/logger.js"
 
 export const placegroupApi = {
   find: {
@@ -13,6 +14,10 @@ export const placegroupApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+    tags: ["api", "placegroup"],
+    description: "Get all placegroup data",
+    notes: "Returns all placegroup data from placegroupAPI",
+    response: { schema: PlaceGroupArray, failAction: validationError },
   },
 
   findOne: {
@@ -28,6 +33,10 @@ export const placegroupApi = {
         return Boom.serverUnavailable("No Placegroup with this id");
       }
     },
+    tags: ["api", "placegroup"],
+    description: "Get a specific placegroup",
+    notes: "Returns details for a specific placegroup",
+    response: { schema: PlacegroupSpec, failAction: validationError },
   },
 
   create: {
@@ -44,6 +53,11 @@ export const placegroupApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+    tags: ["api", "placegroup"],
+    description: "Create a new placegroup",
+    notes: "Returns the newly created placegroup",
+    validate: { payload: PlacegroupSpec, failAction: validationError },
+    response: { schema: PlacegroupSpec, failAction: validationError },
   },
 
   deleteOne: {
@@ -60,6 +74,9 @@ export const placegroupApi = {
         return Boom.serverUnavailable("No Placegroup with this id");
       }
     },
+    tags: ["api", "placegroup"],
+    description: "Delete a placegroup",
+    notes: "A placegroup is removed from InterestingPlaces",
   },
 
   deleteAll: {
@@ -72,5 +89,8 @@ export const placegroupApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+    tags: ["api", "placegroup"],
+    description: "Delete all placegroups",
+    notes: "All placegroups are removed from InterestingPlaces",
   },
 };

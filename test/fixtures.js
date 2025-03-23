@@ -1,86 +1,95 @@
 export const serviceUrl = "http://localhost:3000";
 
-export const maggie = {
-  firstName: "Maggie",
-  lastName: "Simpson",
-  email: "maggie@simpson.com",
+export const john = {
+  firstName: "John",
+  lastName: "Murphy",
+  email: "john@murphy.com",
   password: "secret"
 };
 
 export const testUsers = [
   {
-    firstName: "Homer",
-    lastName: "Simpson",
-    email: "homer@simpson.com",
+    firstName: "Jenny",
+    lastName: "Fons",
+    email: "jfons@gmail.com",
     password: "secret"
   },
   {
-    firstName: "Marge",
-    lastName: "Simpson",
-    email: "marge@simpson.com",
+    firstName: "Daniel",
+    lastName: "Dumile",
+    email: "doom@hotmail.com",
     password: "secret"
   },
   {
-    firstName: "Bart",
-    lastName: "Simpson",
-    email: "bart@simpson.com",
+    firstName: "Trevor",
+    lastName: "Howell",
+    email: "towell@proton.me",
     password: "secret"
   }
 ];
 
 export const summerTrip = {
-  title: "Summer Trip"
+  name: "Summer Trip",
+  date: "06-2024",
+  summary: "A break from work"
 };
 
 export const beachKerry = {
-  "name": "Beach",
-  "location": "Kerry",
-  "description": "A beach in Kerry",
-  "long": -9,
-  "lat": 52,
-  "rating": 4
+  name: "Beach",
+  location: "Kerry",
+  description: "A beach in Kerry",
+  lng: -9, // Standardized naming
+  lat: 52,
+  rating: 4
 };
 
-
 export const winterTrip = {
-  title: "Winter Trip"
+  name: "Winter Trip",
+  date: "12-2024",
+  summary: "A winter escape"
 };
 
 export const testPlacegroups = [
   {
-    title: "Summer trip 2023"
+    name: "Summer trip 2023",
+    date: "06-2023",
+    summary: "A break from work"
   },
   {
-    title: "Big hike 2022"
+    name: "Big hike 2022",
+    date: "05-2022",
+    summary: "In the Andes"
   },
   {
-    title: "Hague conference 2025"
+    name: "Hague conference 2025",
+    date: "05-2025",
+    summary: "Company sprint"
   }
 ];
 
 export const testPlaces = [
   {
-    "name": "Strange alley",
-    "location": "Hague",
-    "description": "A strange alley in The Hague",
-    "long": 4,
-    "lat": 52,
-    "rating": 1
+    name: "Strange alley",
+    location: "Hague",
+    description: "A strange alley in The Hague",
+    lng: 4,
+    lat: 52,
+    rating: 1
   },
   {
-    "name": "Strange Mall",
-    "location": "Madison",
-    "description": "A strange mall in Madison, WI",
-    "long": 89,
-    "lat": 43,
-    "rating": 4
+    name: "Strange Mall",
+    location: "Madison",
+    description: "A strange mall in Madison, WI",
+    lng: 89,
+    lat: 43,
+    rating: 4
   },
   {
-    "name": "Strange roller rink",
-    "location": "Hamburg",
-    "description": "A strange roller rink in Hamburg",
-    "long": 10,
-    "lat": 54,
-    "rating": 5
+    name: "Strange roller rink",
+    location: "Hamburg",
+    description: "A strange roller rink in Hamburg",
+    lng: 10,
+    lat: 54,
+    rating: 5
   }
 ];

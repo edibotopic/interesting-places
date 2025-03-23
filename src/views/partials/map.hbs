@@ -1,4 +1,5 @@
 <script src="/leaflet/leaflet.js"></script>
+<script src="/leaflet-fullscreen/Leaflet.fullscreen.js"></script>
 
 <div id="{{name}}_map" style="height: 150px; width: 150px;"></div>
 <script>
@@ -10,12 +11,17 @@
     var lat = {{lat}}; 
     var long = {{long}};
     
-    // Initialie map with dynamic mapName
-    var map = L.map(mapName + "_map").setView([lat, long], 13);
+    // Initialise map with dynamic mapName
+    // Add a fullscreen button with a plugin
+    var map = L.map(mapName + "_map", {
+      fullscreenControl: true,
+      fullscreenControlOptions: {
+      position: "topright",
+      }}).setView([lat, long], 5);
 
     // Add map tiles
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
-    // BUG: Add a marker (doesn't work)
+    // BUG: Add a marker (doesn't work with injection)
     <!-- L.marker([lat, long]).addTo(map); -->
 </script>

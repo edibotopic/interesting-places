@@ -1,6 +1,6 @@
 {
   "name": "Interesting Places",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A POI application for the HDip in Computing, WIT",
   "main": "src/server.js",
   "type": "module",
@@ -30,6 +30,7 @@
     "hapi-swagger": "^17.3.2",
     "joi": "^17.13.3",
     "leaflet": "^1.9.4",
+    "leaflet-fullscreen": "^1.0.2",
     "lowdb": "^7.0.1",
     "mongoose": "^8.10.0",
     "uuid": "^11.0.5"

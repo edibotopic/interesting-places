@@ -1,0 +1,31 @@
+{{> menu}}
+
+<form class="box" action="/place/{{placegroup._id}}/updateplace/{{place._id}}" method="POST">
+  <label>Update Place Details:</label>
+  <div class="field is-horizontal">
+    <div class="field-body">
+      <div class="field">
+        <input class="input" type="text" name="name", value="{{place.name}}">
+      </div>
+      <div class="field">
+        <input class="input" type="text" name="location" value="{{place.location}}">
+      </div>
+      <div class="field">
+        <input class="input" type="text"  name="description" value="{{place.description}}">
+      </div>
+      <div class="field">
+        <input class="input" type="text"  name="lat" value="{{place.lat}}">
+      </div>
+      <div class="field">
+        <input class="input" type="text"  name="long" value="{{place.long}}">
+      </div>
+      <div class="field">
+        <input class="input" type="text"  name="rating" value="{{place.rating}}">
+      </div>
+      <div class="field">
+        <input class="input" type="text"  name="img" value="{{place.img}}">
+      </div>
+    </div>
+  </div>
+  <button class="button is-primary">Update Place</button>
+</form>

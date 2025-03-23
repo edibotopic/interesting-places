@@ -3,17 +3,17 @@ import { assert } from "chai";
 import { placetimeService } from "./placetime-service.js";
 import { assertSubset } from "../test-utils.js";
 
-import { maggie, summerTrip, testPlacegroups } from "../fixtures.js";
+import { john, summerTrip, testPlacegroups } from "../fixtures.js";
 
 EventEmitter.setMaxListeners(25);
 
-suite("Placegrup API tests", () => {
+suite("Placegroup API tests", () => {
   let user = null;
 
   setup(async () => {
     await placetimeService.deleteAllPlacegroups();
     await placetimeService.deleteAllUsers();
-    user = await placetimeService.createUser(maggie);
+    user = await placetimeService.createUser(john);
     summerTrip.userid = user._id;
   });
 
