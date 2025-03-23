@@ -1,27 +1,29 @@
+<link rel="stylesheet" href="/leaflet/leaflet.css" />
+
 <form class="box" action="/placegroup/{{placegroup._id}}/addplace" method="POST">
   <label>Enter Place Details:</label>
   <div class="field is-horizontal">
     <div class="field-body">
       <div class="field">
-        <input class="input" type="text" placeholder="Enter Name" name="name" />
+        <input class="input" type="text" placeholder="Name" name="name" />
       </div>
       <div class="field">
-        <input class="input" type="text" placeholder="Enter Location" name="location" />
+        <input class="input" type="text" placeholder="Location" name="location" />
       </div>
       <div class="field">
-        <input class="input" type="text" placeholder="Enter Description" name="description" />
+        <input class="input" type="text" placeholder="Description" name="description" />
       </div>
       <div class="field">
-        <input class="input" type="text" placeholder="Enter Longitude" name="long" />
+        <input class="input" type="text" placeholder="Latitude" name="lat" />
       </div>
       <div class="field">
-        <input class="input" type="text" placeholder="Enter Latitude" name="lat" />
+        <input class="input" type="text" placeholder="Longitude" name="long" />
       </div>
       <div class="field">
-        <input class="input" type="text" placeholder="Enter Rating" name="rating" />
+        <input class="input" type="text" placeholder="Rating" name="rating" />
       </div>
       <div class="field">
-        <input class="input" type="text" placeholder="Enter Image Path" name="img" />
+        <input class="input" type="text" placeholder="Image Path" name="img" />
       </div>
     </div>
   </div>
@@ -41,3 +43,9 @@
     </ol>
   </div>
 </div>
+
+<hr>
+
+<small>Maps taken from: <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a></small>
+
+    
