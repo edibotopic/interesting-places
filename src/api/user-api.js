@@ -14,7 +14,7 @@ export const userApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
-    tags: ["api"],
+    tags: ["api", "user"],
     description: "Get all user data",
     notes: "Returns all user data from userAPI",
     response: { schema: UserArray, failAction: validationError },
@@ -33,7 +33,7 @@ export const userApi = {
         return Boom.serverUnavailable("No User with this id");
       }
     },
-    tags: ["api"],
+    tags: ["api", "user"],
     description: "Get a specific user",
     notes: "Returns details for all users",
     response: { schema: UserSpec, failAction: validationError },
@@ -52,7 +52,7 @@ export const userApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
-    tags: ["api"],
+    tags: ["api", "user"],
     description: "Create a new user",
     notes: "Returns the newly created user",
     validate: { payload: UserSpec, failAction: validationError },
@@ -69,8 +69,8 @@ export const userApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
-    tags: ["api"],
+    tags: ["api", "user"],
     description: "Delete all users",
-    notes: "All users removed from Placetime",
+    notes: "All users removed from InterestingPlaces",
   },
 };
