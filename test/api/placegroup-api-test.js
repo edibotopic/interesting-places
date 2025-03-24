@@ -11,6 +11,7 @@ suite("Placegroup API tests", () => {
   let user = null;
 
   setup(async () => {
+    user = await placetimeService.createUser(john);
     await placetimeService.deleteAllPlacegroups();
     await placetimeService.deleteAllUsers();
     user = await placetimeService.createUser(john);

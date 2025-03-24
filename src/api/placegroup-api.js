@@ -1,6 +1,6 @@
 import Boom from "@hapi/boom";
 import { db } from "../models/db.js";
-import { PlacegroupSpec, PlaceGroupArray } from "../models/joi-schemas.js"
+import { PlacegroupSpec, PlaceGroupArray, IdSpec, PlacegroupSpecPlus } from "../models/joi-schemas.js"
 import { validationError } from "../utils/logger.js"
 
 export const placegroupApi = {
@@ -15,9 +15,9 @@ export const placegroupApi = {
       }
     },
     tags: ["api", "placegroup"],
+    response: { schema: PlaceGroupArray, failAction: validationError },
     description: "Get all placegroup data",
     notes: "Returns all placegroup data from placegroupAPI",
-    response: { schema: PlaceGroupArray, failAction: validationError },
   },
 
   findOne: {
@@ -36,7 +36,8 @@ export const placegroupApi = {
     tags: ["api", "placegroup"],
     description: "Get a specific placegroup",
     notes: "Returns details for a specific placegroup",
-    response: { schema: PlacegroupSpec, failAction: validationError },
+    validate: { params: { id: IdSpec }, failAction: validationError },
+    response: { schema: PlacegroupSpecPlus, failAction: validationError },
   },
 
   create: {
@@ -57,7 +58,7 @@ export const placegroupApi = {
     description: "Create a new placegroup",
     notes: "Returns the newly created placegroup",
     validate: { payload: PlacegroupSpec, failAction: validationError },
-    response: { schema: PlacegroupSpec, failAction: validationError },
+    response: { schema: PlacegroupSpecPlus, failAction: validationError },
   },
 
   deleteOne: {
@@ -77,6 +78,7 @@ export const placegroupApi = {
     tags: ["api", "placegroup"],
     description: "Delete a placegroup",
     notes: "A placegroup is removed from InterestingPlaces",
+    validate: { params: { id: IdSpec }, failAction: validationError },
   },
 
   deleteAll: {
