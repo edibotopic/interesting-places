@@ -46,6 +46,36 @@ API documentation is built using Swagger and live at
 * Unit tests
 * Publically-accessible
 
+## Local development
+
+Clone the repo and change into the project directory:
+
+```bash
+git clone git@github.com:edibotopic/interesting-places.git
+cd interesting-places
+```
+
+To install dependencies:
+
+```bash
+# interesting-places
+npm install
+```
+
+To start a development server:
+
+```bash
+npm run dev
+```
+
+You can then access the app on localhost through port `3000`.
+
+To run unit tests, make sure the server is running and then run:
+
+```bash
+npm run test
+```
+
 ## Todo
 
 * [x] Extension to model (e.g., name, description, lat, long, rating)
