@@ -1,24 +1,29 @@
 import Joi from "joi";
 
-export const UserCredentialsSpec = {
-  email: Joi.string().email().required(),
-  password: Joi.string().required(),
-};
+export const IdSpec = Joi.alternatives().try(Joi.string(), Joi.object()).description("a valid ID");
 
-export const IdSpec = Joi.alternatives().try(Joi.string(), Joi.object().description("a valid ID"));
-
+// NOTE: abandoned due to failing tests
+// export const UserCredentialsSpec = Joi.object()
+//   .keys({
+//     email: Joi.string().email().example("john@murphy.com").required(),
+//     password: Joi.string().example("secret").required(),
+//   });
+//
 export const UserSpec = Joi.object()
   .keys({
-    firstName: Joi.string().example("Homer").required(),
-    lastName: Joi.string().example("Simpson").required(),
-    email: Joi.string().email().example("homer@simpson.com").required(),
+    firstName: Joi.string().example("John").required(),
+    lastName: Joi.string().example("Murphy").required(),
+    email: Joi.string().email().example("john@murphy.com").required(),
     password: Joi.string().example("secret").required(),
-    _id: IdSpec,
-    __v: Joi.number(),
   })
   .label("UserDetails");
 
-export const UserArray = Joi.array().items(UserSpec).label("UserArray");
+export const UserSpecPlus = UserSpec.keys({
+  _id: IdSpec,
+  __v: Joi.number(),
+}).label("UserDetailsPlus");
+
+export const UserArray = Joi.array().items(UserSpecPlus).label("UserArray");
 
 // BUG: the empty string for number types returns 0
 // BUG: if input is invalid, user is taken to a non-functional input screen
@@ -31,12 +36,15 @@ export const PlaceSpec = Joi.object()
     long: Joi.number().example("60").allow(null, "").optional().min(-180).max(180),
     rating: Joi.number().example("5").allow(null, "").optional().min(0).max(5),
     img: Joi.string().example("").allow("").optional(),
-    _id: IdSpec,
-    __v: Joi.number(),
   })
   .label("PlaceDetails")
 
-export const PlaceArray = Joi.array().items(PlaceSpec).label("PlaceArray");
+export const PlaceSpecPlus = PlaceSpec.keys({
+  _id: IdSpec,
+  __v: Joi.number(),
+}).label("PlacePlus");
+
+export const PlaceArray = Joi.array().items(PlaceSpecPlus).label("PlaceArray");
 
 export const PlacegroupSpec = Joi.object()
   .keys({
@@ -47,9 +55,15 @@ export const PlacegroupSpec = Joi.object()
       .optional()
       .allow(""),
     summary: Joi.string().example("Spanish holiday 2025").allow("").optional(),
-    _id: IdSpec,
-    __v: Joi.number(),
+    userid: IdSpec,
+    places: PlaceArray,
   })
   .label("PlacegroupDetails")
 
-export const PlaceGroupArray = Joi.array().items(PlacegroupSpec).label("PlaceGroupArray");
+export const PlacegroupSpecPlus = PlacegroupSpec.keys({
+  _id: IdSpec,
+  __v: Joi.number(),
+}).label("PlacegroupPlus");
+
+export const PlaceGroupArray = Joi.array().items(PlacegroupSpecPlus).label("PlaceGroupArray");
+
