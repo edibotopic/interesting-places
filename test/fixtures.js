@@ -7,10 +7,10 @@ export const john = {
   password: "secret"
 };
 
-// export const johnCredentials = {
-//   email: "john@murphy.com",
-//   password: "secret"
-// };
+export const johnCredentials = {
+  email: "john@murphy.com",
+  password: "secret"
+};
 
 export const testUsers = [
   {
